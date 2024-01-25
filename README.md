@@ -18,3 +18,23 @@ In-memory databasen
 ----------------------------
 http://localhost:8080/h2-console/login.do   (lösen: password)
 
+
+Ex på anrop
+===========
+GET: 
+ curl http://localhost:8080/api/v1/accounts     	// hämta alla konto
+ curl http://localhost:8080/api/v1/accounts/yahoo	// hämta specifik kontonamn 
+ curl http://localhost:8080/api/v1/accounts/yah		// del av kontonamn
+
+
+
+POST:
+ curl -X POST "http://localhost:8080/api/v1/accounts" -H "Content-Type: application/json" -d "{\"name\":\"kalle@kulle.com\", \"uid\":\"kalle\", \"pwd\":\"Kalle30\"}"
+
+
+DELETE:
+ curl -X DELETE "http://localhost:8080/api/v1/accounts/1" 
+ 
+PUT:
+ TBD 
+ 
