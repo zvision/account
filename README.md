@@ -32,17 +32,6 @@ GET:
  curl http://localhost:8080/api/v1/accounts/yah		// del av kontonamn
 
 
-
-Ex på record
-============
-
-Ex på record
------------------
-{"name":"www.bell.com","uid":"graham.bell@abc.com","belly238"}
-{"name":"www.edison.com","uid":"thomas.edison@abc.com","pwd":"Eddy_55"}
-
-
-
 POST:
  curl -X POST "http://localhost:8080/api/v1/accounts" -H "Content-Type: application/json" -d "{\"name\":\"www.ankeborg.com\", \"uid\":\"kalle\", \"pwd\":\"Kalle30\"}"
 
@@ -53,3 +42,9 @@ DELETE:
 PUT:
  TBD 
  
+ 
+Ex på record
+============
+{"name":"www.bell.com","uid":"graham.bell@abc.com","belly238"}
+{"name":"www.edison.com","uid":"thomas.edison@abc.com","pwd":"Eddy_55"}
+
