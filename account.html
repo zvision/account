@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Uid</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        function fetchPosts() {
+            const apiUrl = 'http://localhost:8080/api/v1/accounts/com';
+            fetch(apiUrl)
+                .then(resp => {
+                    if (!resp.ok) {
+                        throw new Error('Not ok network response!');
+                    }
+                    return resp.json();
+                })
+                .then((payload) => {
+                    var dataTable = document.getElementById("data-table");
+                    var tbody = dataTable.getElementsByTagName("tbody")[0];
+                    //console.error('payload.body: ', payload);
+                    for (account of payload.body) {
+                        var row = document.createElement("tr");
+                        var idCell = document.createElement("td");
+                        idCell.innerHTML = account["id"];
+                        var titleCell = document.createElement("td");
+                        titleCell.innerHTML = account["name"];
+                        var bodyCell = document.createElement("td");
+                        bodyCell.innerHTML = account["uid"];
+
+                        row.appendChild(idCell);
+                        row.appendChild(titleCell);
+                        row.appendChild(bodyCell);
+                        tbody.appendChild(row);
+                    };
+                })
+                .catch((error) => { console.error('Error occured:', error); });
+        }
+        fetchPosts();
+    </script>
+</body>
+
+</html>
