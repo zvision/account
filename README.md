@@ -21,10 +21,10 @@ Used to access the service and layout the records in browser
 
 In-memory file databasen
 ----------------------------
-Driver Class: org.h2.Driver
-JDBC URL: jdbc:h2:file:<project path>/account/data/db/testdb
-User Name: sa
-Password: password
+Driver Class: org.h2.Driver </br>
+JDBC URL: jdbc:h2:file:<project path>/account/data/db/testdb </br>
+User Name: sa </br>
+Password: password </br>
 
 http://localhost:8080/h2-console/login.do   
 
@@ -33,9 +33,9 @@ http://localhost:8080/h2-console/login.do
 Ex på anrop
 ===========
 GET: 
- curl http://localhost:8080/api/v1/accounts     	// hämta alla konto
- curl http://localhost:8080/api/v1/accounts/yahoo	// hämta specifik kontonamn 
- curl http://localhost:8080/api/v1/accounts/yah		// del av kontonamn
+ curl http://localhost:8080/api/v1/accounts     	// hämta alla konto </br>
+ curl http://localhost:8080/api/v1/accounts/yahoo	// hämta specifik kontonamn </br> 
+ curl http://localhost:8080/api/v1/accounts/yah		// del av kontonamn </br>
 
 
 POST:
@@ -51,6 +51,6 @@ PUT:
  
 Ex på record
 ============
-{"name":"www.bell.com","uid":"graham.bell@abc.com","belly238"}
-{"name":"www.edison.com","uid":"thomas.edison@abc.com","pwd":"Eddy_55"}
+{"name":"www.bell.com","uid":"graham.bell@abc.com","belly238"} </br>
+{"name":"www.edison.com","uid":"thomas.edison@abc.com","pwd":"Eddy_55"} </br>
 
