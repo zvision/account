@@ -14,9 +14,20 @@ Hur/vad göra
  se \debug_account_settings.GIF
 
 
-In-memory databasen
+account.html
+=============
+
+Used to access the service and layout the records in browser
+
+In-memory file databasen
 ----------------------------
-http://localhost:8080/h2-console/login.do   (lösen: password)
+Driver Class: org.h2.Driver
+JDBC URL: jdbc:h2:file:<project path>/account/data/db/testdb
+User Name: sa
+Password: password
+
+http://localhost:8080/h2-console/login.do   
+
 
 
 Ex på anrop
@@ -27,9 +38,8 @@ GET:
  curl http://localhost:8080/api/v1/accounts/yah		// del av kontonamn
 
 
-
 POST:
- curl -X POST "http://localhost:8080/api/v1/accounts" -H "Content-Type: application/json" -d "{\"name\":\"kalle@kulle.com\", \"uid\":\"kalle\", \"pwd\":\"Kalle30\"}"
+ curl -X POST "http://localhost:8080/api/v1/accounts" -H "Content-Type: application/json" -d "{\"name\":\"www.ankeborg.com\", \"uid\":\"kalle\", \"pwd\":\"Kalle30\"}"
 
 
 DELETE:
@@ -38,3 +48,9 @@ DELETE:
 PUT:
  TBD 
  
+ 
+Ex på record
+============
+{"name":"www.bell.com","uid":"graham.bell@abc.com","belly238"}
+{"name":"www.edison.com","uid":"thomas.edison@abc.com","pwd":"Eddy_55"}
+

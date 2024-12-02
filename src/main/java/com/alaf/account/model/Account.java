@@ -14,10 +14,9 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "m_konto")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Account {
+public @Data class Account {
 
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Id
