@@ -39,4 +39,8 @@ public class AccountService {
     public void deleteAccount(Account account) {
         accountRepository.delete(account);
     }
+    
+    public void deleteAllAccounts() {
+        accountRepository.deleteAll();
+    }
 }

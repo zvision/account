@@ -43,7 +43,8 @@ POST:
 
 
 DELETE:
- curl -X DELETE "http://localhost:8080/api/v1/accounts/1" 
+ curl -X DELETE "http://localhost:8080/api/v1/accounts/1"   //ta bort specifik</br>
+ curl -X DELETE "http://localhost:8080/api/v1/accounts/del" // rensar db </br>
  
 PUT:
  TBD 
@@ -51,6 +52,6 @@ PUT:
  
 Ex på record
 ============
-{"name":"www.bell.com","uid":"graham.bell@abc.com","belly238"} </br>
+{"name":"www.bell.com","uid":"graham.bell@abc.com","pwd":"belly238"} </br>
 {"name":"www.edison.com","uid":"thomas.edison@abc.com","pwd":"Eddy_55"} </br>
 

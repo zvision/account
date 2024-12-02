@@ -6,14 +6,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.DELETE;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +16,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.alaf.account.model.Account;
 import com.alaf.account.service.AccountService;
 
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -108,5 +107,12 @@ public class AccountResource {
 		}
 		return ResponseEntity.ok().body(msg);
 	}
-
+	
+	@DELETE
+	@Produces("application/json")
+	@Path("/accounts/del")
+	public ResponseEntity<String> deleteAllAccounts()  {
+		accountService.deleteAllAccounts();
+		return ResponseEntity.ok().body("Deleted all accounts");
+	}
 }
